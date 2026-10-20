@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXE</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>LUXE</h1>
+    <nav>
+      <button data-category="" class="active">All</button>
+      <button data-category="men">Men</button>
+      <button data-category="women">Women</button>
+      <button data-category="kids">Kids</button>
+    </nav>
+  </header>
+
+  <nav class="price-filters">
+    <button data-min="" data-max="" class="active">All Prices</button>
+    <button data-min="0" data-max="500">Under ₹500</button>
+    <button data-min="500" data-max="1000">₹500–₹1000</button>
+    <button data-min="1000" data-max="2000">₹1000–₹2000</button>
+    <button data-min="2000" data-max="">Above ₹2000</button>
+  </nav>
+
+  <main>
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
