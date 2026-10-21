@@ -17,6 +17,10 @@
       so capped results don't look like the whole answer, and multi-turn
       conversation memory (a follow-up like "what about blue?" correctly
       keeps earlier filters)
+- [x] **Phase 3 — integration**: chat widget (toggle button, panel,
+      `frontend/src/chat.js`) on the storefront, conversation memory handled
+      automatically via a browser-side `history` variable, a zero-result
+      fallback that relaxes price → colour → keyword and says so honestly
 
 ## Not started yet
 
@@ -24,12 +28,16 @@
       real queries with their expected filter) that runs before every change
       to the chatbot is trusted — catches regressions instead of eyeballing
       a few test messages
-- [ ] **Phase 3 — integration**: chat widget on the storefront itself
 - [ ] **Phase 4 — GCP deployment**: Artifact Registry, Secret Manager, Cloud
       Build, Cloud Run
 - [ ] **Phase 4b — CI/CD**: a Cloud Build trigger wired to GitHub, so every
       `git push` to `main` automatically builds and redeploys — no manual
       deploy steps after initial setup
+- [ ] **Phase 5 — RAG layer (hybrid)**: added on top of Phase 2's structured
+      filtering, not a replacement. Exact fields (price, category, colour)
+      stay as MongoDB queries. Vector search over product descriptions
+      handles vibe/style requests with no matching field (e.g. "something
+      elegant for a beach wedding") that the current agent can't catch
 
 ## Deliberately out of scope (for now)
 

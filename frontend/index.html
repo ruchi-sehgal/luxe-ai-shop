@@ -30,5 +30,22 @@
   </main>
 
   <script type="module" src="/src/main.js"></script>
+  
+
+  <button id="chat-toggle" aria-label="Open shopping assistant">💬</button>
+
+  <div id="chat-panel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span>Shopping Assistant</span>
+      <button id="chat-close" aria-label="Close">✕</button>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" placeholder="e.g. white shirt under 1000" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script type="module" src="/src/chat.js"></script>
 </body>
 </html>

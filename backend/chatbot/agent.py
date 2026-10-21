@@ -26,11 +26,13 @@ model = GroqModel(
 agent = Agent(
     model,
     output_type=ProductFilter,
-    model_settings=GroqModelSettings(groq_reasoning_effort="low"),
+    model_settings=GroqModelSettings(groq_reasoning_effort="medium"),
     system_prompt=(
         "You translate a shopper's plain-English request into a product search filter. "
         "Only fill in fields the shopper actually mentioned; leave everything else null. "
         "Never invent a value that wasn't implied by the message. "
+        "Pay close attention to 'keyword': any clothing item word the shopper names — "
+        "shirt, jeans, kurti, hoodie, dress, jacket, and so on — must be captured there. "
         "Your catalog has no popularity, rating, or review data — if asked for anything "
         "like that, say so honestly in your reply rather than guessing. "
         "If this message is a follow-up in an ongoing conversation, treat it as refining "

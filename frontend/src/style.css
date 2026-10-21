@@ -1,108 +1,246 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
-    background: #f7f7f5;
-    color: #1a1a1a;
-  }
-  
-  .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 2rem;
-    background: #1a1a1a;
-    color: #fff;
-  }
-  
-  .site-header h1 {
-    margin: 0;
-    letter-spacing: 0.1em;
-    font-size: 1.5rem;
-  }
-  
-  .site-header nav button {
-    background: none;
-    border: 1px solid #555;
-    color: #ddd;
-    padding: 0.4rem 1rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .site-header nav button.active {
-    background: #fff;
-    color: #1a1a1a;
-    border-color: #fff;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .product-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding-bottom: 1rem;
-  }
-  
-  .product-image {
-    width: 100%;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    background-color: #eee;
-  }
-  
-  .product-card h3,
-  .product-card .price,
-  .product-card .desc {
-    margin: 0.4rem 1rem 0;
-  }
-  
-  .product-card .price {
-    font-weight: 600;
-  }
-  
-  .product-card .desc {
-    font-size: 0.85rem;
-    color: #555;
-  }
-  
-  .empty {
-    color: #777;
-  }
+  box-sizing: border-box;
+}
 
-  .price-filters {
-    padding: 0 2rem;
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .price-filters button {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    cursor: pointer;
-  }
-  
-  .price-filters button.active {
-    background: #1a1a1a;
-    color: #fff;
-    border-color: #1a1a1a;
-  }
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f7f7f5;
+  color: #1a1a1a;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.site-header h1 {
+  margin: 0;
+  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+}
+
+.site-header nav button {
+  background: none;
+  border: 1px solid #555;
+  color: #ddd;
+  padding: 0.4rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.site-header nav button.active {
+  background: #fff;
+  color: #1a1a1a;
+  border-color: #fff;
+}
+
+main {
+  padding: 2rem;
+}
+
+.price-filters {
+  padding: 0 2rem;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.price-filters button {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.price-filters button.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-color: #eee;
+}
+
+.product-card h3,
+.product-card .price,
+.product-card .desc {
+  margin: 0.4rem 1rem 0;
+}
+
+.product-card .price {
+  font-weight: 600;
+}
+
+.product-card .desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.empty {
+  color: #777;
+}
+
+.hidden {
+  display: none;
+}
+
+#chat-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.chat-panel {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
+  height: 480px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: #f1f1ef;
+  color: #1a1a1a;
+}
+
+.chat-products {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.chat-product-card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 0.4rem;
+}
+
+.chat-product-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.chat-product-card .name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.chat-product-card .price {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.chat-form {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.chat-form input {
+  flex: 1;
+  border: none;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.chat-form input:focus {
+  outline: none;
+}
+
+.chat-form button {
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0 1rem;
+  cursor: pointer;
+}
