@@ -21,6 +21,13 @@
       `frontend/src/chat.js`) on the storefront, conversation memory handled
       automatically via a browser-side `history` variable, a zero-result
       fallback that relaxes price → colour → keyword and says so honestly
+- [x] **Phase 4 — GCP deployment**: live at
+      **https://luxe-ai-shop-web-lmusiuaqbq-el.a.run.app** — Docker image
+      built via Cloud Build (no local Docker needed), stored in Artifact
+      Registry (`asia-south1`), secrets (`MONGO_URI`, `GROQ_API_KEY`) in
+      Secret Manager, running on Cloud Run with a $5 budget alert. Verified:
+      storefront, `/health`, `/products` (100 items), and `/chat` all working
+      against the real production database
 
 ## Not started yet
 
@@ -28,8 +35,6 @@
       real queries with their expected filter) that runs before every change
       to the chatbot is trusted — catches regressions instead of eyeballing
       a few test messages
-- [ ] **Phase 4 — GCP deployment**: Artifact Registry, Secret Manager, Cloud
-      Build, Cloud Run
 - [ ] **Phase 4b — CI/CD**: a Cloud Build trigger wired to GitHub, so every
       `git push` to `main` automatically builds and redeploys — no manual
       deploy steps after initial setup
