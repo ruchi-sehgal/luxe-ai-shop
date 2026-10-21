@@ -3,3 +3,4 @@ uvicorn
 pymongo[srv]
 pydantic-settings
 pydantic-ai-slim[groq]
+pydantic-evals
