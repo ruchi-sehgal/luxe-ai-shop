@@ -4,3 +4,5 @@ pymongo[srv]
 pydantic-settings
 pydantic-ai-slim[groq]
 pydantic-evals
+pytest
+pytest-asyncio
